@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Register } from './pages/register/register';
+
 
 @Component({
   imports: [RouterOutlet],

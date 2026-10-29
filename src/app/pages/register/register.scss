@@ -1,0 +1,23 @@
+.register-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+mat-card {
+  width: 400px;
+  padding: 20px;
+}
+
+/* Arredonda e aumenta o tamanho do canto esquerdo */
+:host ::ng-deep .register-component .mdc-notched-outline__leading {
+  border-radius: 25px 0 0 25px !important;
+  width: 25px !important; /* Dá espaço para a curva de 50px se desenhar */
+}
+
+/* Arredonda o canto direito */
+:host ::ng-deep .register-component .mdc-notched-outline__trailing {
+  border-radius: 0 25px 25px 0 !important;
+}
