@@ -8,16 +8,40 @@
                 <mat-form-field appearance="outline" class="full-width" id="input-field">
                     <mat-label>Nome completo</mat-label>
                     <input matInput placeholder="Digite Seu Nome completo" formControlName="fullName">
+                    @if (form.get('fullName')?.invalid && form.get('fullName')?.touched) {
+                    <mat-error>
+                        @if (form.get('fullName')?.errors?.['required']) {
+                        O nome completo é obrigatório.
+                        }
+                        @if (form.get('fullName')?.errors?.['minlength']) {
+                        O nome tem menos de 3 letras.
+                        }
+                    </mat-error>
+                    }
                 </mat-form-field>
+
+
                 <mat-form-field appearance="outline" class="full-width">
+
                     <mat-label>Email</mat-label>
                     <input matInput placeholder="Digite Seu email." formControlName="email">
+                    @if (form.get('email')?.invalid && form.get('email')?.touched ) {
+                    <mat-error>
+                        @if (form.get('email')?.errors?.['required']) {
+                        O email é obrigatório!
+                        }
+                        @if (form.get('email')?.errors?.['email']){
+                            Insira um email válido.
+                        }
+                    </mat-error>
+                    }
                 </mat-form-field>
                 <input-password-field [control]="passwordControl"></input-password-field>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button matButton="elevated" class="full-width" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+            <button matButton="elevated" class="full-width" [disabled]="form.invalid"
+                (click)="submit()">Cadastrar</button>
         </mat-card-actions>
     </mat-card>
 </div>

@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { PasswordField } from '../../shared/components/password-field/password-field';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgIf } from '../../../../node_modules/@angular/common/types/_common_module-chunk';
 
 
 
