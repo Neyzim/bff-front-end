@@ -30,6 +30,20 @@ export class Register {
     return this.form.get(`password`) as FormControl;
   }
 
+  get fullNameErrors(): string | null {
+    const control = this.form.get('fullName');
+    if (control?.hasError('required')) { return "O nome completo é obrigatório."; }
+    if (control?.hasError('minlength')) { return "O nome tem menos de 3 letras."; }
+    return null;
+  }
+
+  get emailErrors(): string | null {
+    const control = this.form.get('email');
+    if (control?.hasError('required')) { return "O email é obrigatório!" };
+    if (control?.hasError('email')) { return "Insira um email válido." }
+    return null;
+  }
+
   submit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
