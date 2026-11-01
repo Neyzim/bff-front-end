@@ -15,6 +15,14 @@ import { MatInputModule } from '@angular/material/input';
 export class PasswordField {
   hide = signal(true);
   @Input({ required: true }) control!: FormControl;
+
+  get passwordErrors(): string | null{
+    const passwordControl = this.control;
+    if (passwordControl?.hasError('required')) {return "Digite uma senha."}
+    if (passwordControl?.hasError('minlength')) { return "A senha precisa ter mais que 6 dígitos."}
+    return null;
+
+  }
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
