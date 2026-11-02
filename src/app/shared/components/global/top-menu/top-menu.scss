@@ -1,0 +1,30 @@
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu .logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.top-menu .spacer {
+    flex: 1 1 auto;
+}
+
+.top-menu a {
+    text-decoration: none;
+}
+
+.top-menu button {
+    border-radius: 0px;
+    height: 100%;
+}
